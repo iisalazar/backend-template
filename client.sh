@@ -1,0 +1,3 @@
+# curl --header "Content-Type: application/json" -d '{ "username" : "dertrockx", "firstName" : "Ian", "lastName" : "Salazar", "password" : "password123"}' http://localhost:3000/users/create/
+# curl --header "Content-Type: application/json" -d ' { "username" : "dertrockx", "password" : "password123" }' http://localhost:3000/users/login/
+curl --header "Content-Type: application/json" -H "token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImRlcnRyb2NreCIsImlhdCI6MTU2NDMwNDUwMH0.kAn8iNoDmqtUDw4zpkHYsOuXkzrmEX7bUjKALD5H8vY" http://localhost:3000/protected/
