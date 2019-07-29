@@ -1,7 +1,7 @@
 const express = require('express')
 const userRouter = require('./src/routers/user')
-// const port = process.env.PORT // gets the port from the .env file in root directory
-const port = 3000
+const port = process.env.PORT // gets the port from the .env file in root directory
+//const port = 3000
 require('./src/db/db')
 
 const app = express();
