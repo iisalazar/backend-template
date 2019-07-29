@@ -1,14 +1,19 @@
 const crypto = require('crypto')
 
-const hasher = (text, user_password) => {
-	const hasher = crypto.createHash('sha512')
-	var hashed_password = hasher.update(text, 'utf-8').digest('hex')
-	return user_password === hashed_password	
+class Hasher{
+	checkMatch(text, hashed_password){
+		const hasher = crypto.createHash('sha512')
+		var password = hasher.update(text, 'utf-8').digest('hex')
+		if(password === hashed_password){
+			return true
+		}
+		return false
+	}
+	hashText (text){
+		const hasher = crypto.createHash('sha512')
+		return hasher.update(text, 'utf-8').digest('hex')
+	}
 }
-// exports as function
-/*
-	const hasher = require('/utils/Password')
-	hasher(text, user_password_default)
-*/
-module.exports = hasher
+
+module.exports = Hasher
 

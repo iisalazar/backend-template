@@ -2,7 +2,9 @@ const mongoose = require('mongoose');
 const validator = require('validator');
 const crypto = require('crypto');
 const jwt = require('jsonwebtoken');
-const checkHash = require('../utils/password');
+const Hasher = require('../utils/password');
+
+let hasher = new Hasher() // instantiating Hasher object
 
 const userSchema = mongoose.Schema({
 	firstName: {
@@ -39,7 +41,7 @@ userSchema.pre('save', async function(next) {
 	let hasher = crypto.createHash('sha512')
 	const user = this;
 	if (user.isModified('password')){
-		user.password = hasher.update(user.password, 'utf-8').digest('hex')
+		user.password = hasher.hashText(user.password)
 	}
 	next()
 })
@@ -59,7 +61,7 @@ userSchema.statics.findByCredentials = async (email, password) => {
 	if (!user){
 		throw new Error({ error: "User not found" })
 	}
-	if (!checkHash(password, user.password)){
+	if (!hasher.checkMatch(password, user.password)){
 		throw new Error({ error: "Passwords do not match"})
 	}
 	return user
