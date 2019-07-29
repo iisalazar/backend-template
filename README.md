@@ -2,7 +2,10 @@
 
 ## How to use
 ```shell
-	git clone https://github.com/dertrockx/backend-template.git
-	npm install
-	npm run install
+# clone repository
+git clone https://github.com/dertrockx/backend-template.git
+# install dependencies
+npm install
+# run server
+npm run install
 ```
