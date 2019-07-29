@@ -1,3 +1,4 @@
-# curl --header "Content-Type: application/json" -d '{ "username" : "dertrockx", "firstName" : "Ian", "lastName" : "Salazar", "password" : "password123"}' http://localhost:3000/users/create/
-# curl --header "Content-Type: application/json" -d ' { "username" : "dertrockx", "password" : "password123" }' http://localhost:3000/users/login/
-curl --header "Content-Type: application/json" -H "token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImRlcnRyb2NreCIsImlhdCI6MTU2NDMwNDUwMH0.kAn8iNoDmqtUDw4zpkHYsOuXkzrmEX7bUjKALD5H8vY" http://localhost:3000/protected/
+# curl --header "Content-Type: application/json" -d '{ "username" : "dertrockx", "firstName" : "Ian", "lastName" : "Salazar", "password" : "password123", "email" : "iansalazar67@gmail.com"}' http://localhost:3000/users
+curl --header "Content-Type: application/json" -d ' { "email" : "iansalazar67@gmail.com", "password" : "password123" }' http://localhost:3000/users/login
+# curl --header "Content-Type: application/json" -H "token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImRlcnRyb2NreCIsImlhdCI6MTU2NDMwNDUwMH0.kAn8iNoDmqtUDw4zpkHYsOuXkzrmEX7bUjKALD5H8vY" http://localhost:3000/protected/
+# curl --header "Autorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZDNkOTc1ZWY1YmY4YzE3NjUwZmQzYTciLCJpYXQiOjE1NjQzNTcxNjR9.QNhhg5vQ9PETVTuIvdOhvEiOoB4Ef-Xk4h1SVZ_yOnM" http://localhost:3000/users/me
