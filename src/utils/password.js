@@ -4,10 +4,7 @@ class Hasher{
 	checkMatch(text, hashed_password){
 		const hasher = crypto.createHash('sha512')
 		var password = hasher.update(text, 'utf-8').digest('hex')
-		if(password === hashed_password){
-			return true
-		}
-		return false
+		return password === hashed_password
 	}
 	hashText (text){
 		const hasher = crypto.createHash('sha512')
