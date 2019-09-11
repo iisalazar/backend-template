@@ -38,7 +38,6 @@ const userSchema = mongoose.Schema({
 
 // Hash the password before saving the user model
 userSchema.pre('save', async function(next) {	
-	let hasher = crypto.createHash('sha512')
 	const user = this;
 	if (user.isModified('password')){
 		user.password = hasher.hashText(user.password)

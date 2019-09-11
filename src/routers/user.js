@@ -48,10 +48,6 @@ router.post('/users/me/logout', auth, async(req, res) => {
 	console.log(req.token)
 	try {
 
-		/*
-			equivalent to 
-			req['user']['tokens'] = [document for req['user']['tokens'] if document.token != req.token ]
-		*/
 		req.user.tokens = req.user.tokens.filter( (token) => {
 			return token.token != req.token
 		})
